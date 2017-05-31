@@ -18,7 +18,7 @@ MiniShift 1.0.1. But you can also look up the most recent release here: https://
 
     wget https://github.com/minishift/minishift/releases/download/v1.0.1/minishift-1.0.1-linux-amd64.tgz
     tar xzf minishift-1.0.1-linux-amd64.tgz
-    ./minishift start --metrics --memory  8192
+    ./minishift start --metrics --memory 8192
 
 ## Install Hawkular OpenShift Agent
 
