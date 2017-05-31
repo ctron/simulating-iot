@@ -11,10 +11,6 @@ addon according to the following documentation:
 
 https://docs.openshift.org/latest/minishift/getting-started/docker-machine-drivers.html
 
-## Install OpenShift Client
-
-TO BE WRITTEN
-
 ## Install MiniShift
 
 MiniShift is a simple download which needs to be unzipped. This tutorial is using
@@ -26,11 +22,10 @@ MiniShift 1.0.1. But you can also look up the most recent release here: https://
 
 ## Install Hawkular OpenShift Agent
 
-    oc login -u system:admin
-    oc create -f remote/hawkular-openshift-agent/deploy/openshift/hawkular-openshift-agent-configmap.yaml -n openshift-infra
-    oc process -f remote/hawkular-openshift-agent/deploy/openshift/hawkular-openshift-agent.yaml IMAGE_VERSION=1.4.1.Final | oc create -n openshift-infra -f -
-    oc adm policy add-cluster-role-to-user hawkular-openshift-agent system:serviceaccount:openshift-infra:hawkular-openshift-agent
-    oc login -u developer
+For gathering custom metrics from the Kapua containers we will need to install
+the Hawkular OpenShift agent: 
+
+    ./scripts/deploy_hawkular.sh
 
 ## Access OpenShift
 

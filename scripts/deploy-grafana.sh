@@ -19,16 +19,16 @@ openshift_ping
 
 openshift_create_new_project "$GRAFANA_PROJECT_NAME"
 
-#"$OC" new-app \
+#oc new-app \
 # -n "$GRAFANA_PROJECT_NAME" \
 # -f https://raw.githubusercontent.com/hawkular/hawkular-grafana-datasource/v1.0.8/docker/openshift/openshift-template-ephemeral.yaml
 
-"$OC" new-app \
+oc new-app \
  -n "$GRAFANA_PROJECT_NAME" \
 -f https://raw.githubusercontent.com/hawkular/hawkular-grafana-datasource/master/docker/openshift/openshift-template-ephemeral.yaml
 
 
-"$OC" status -n "$GRAFANA_PROJECT_NAME"
+oc status -n "$GRAFANA_PROJECT_NAME"
 
 echo
 echo Now configure your Grafana datasources with:

@@ -21,15 +21,15 @@ test -n "$project" || die "Missing project name: ./delete.sh <project>"
 
 log "Testing OpenShift connectivity"
 
-"$OC" projects &>/dev/null || die "OpenShift seems to be unreachable. Are you logged in?"
+oc projects &>/dev/null || die "OpenShift seems to be unreachable. Are you logged in?"
 
 log "Deleting project '$project'"
 
-"$OC" delete "project/$project"
+oc delete "project/$project"
 
 log "Waiting to project deletion"
 
-while "$OC" describe "project/$project" &>/dev/null; do
+while oc describe "project/$project" &>/dev/null; do
 	sleep 10
 	log "Still waiting..."
 done

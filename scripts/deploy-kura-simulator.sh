@@ -30,7 +30,7 @@ oc new-app \
  -p "IMAGE_VERSION=$KURA_SIMULATOR_IMAGE_VERSION" \
  -p "BROKER_URL=$BROKER_URL" \
 
-"$OC" -n "$KURA_SIMULATOR_PROJECT_NAME" create configmap data-simulator-config --from-file=KSIM_SIMULATION_CONFIGURATION=${SCRIPT_BASE}/../config/simulator1.json
-"$OC" -n "$KURA_SIMULATOR_PROJECT_NAME" set env --from=configmap/data-simulator-config dc/simulator
+oc -n "$KURA_SIMULATOR_PROJECT_NAME" create configmap data-simulator-config --from-file=KSIM_SIMULATION_CONFIGURATION=${SCRIPT_BASE}/../config/simulator1.json
+oc -n "$KURA_SIMULATOR_PROJECT_NAME" set env --from=configmap/data-simulator-config dc/simulator
 
-"$OC" status -n "$KURA_SIMULATOR_PROJECT_NAME"
+oc status -n "$KURA_SIMULATOR_PROJECT_NAME"

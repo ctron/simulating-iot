@@ -23,12 +23,12 @@ openshift_create_new_project "$KAPUA_PROJECT_NAME"
 
 log "Deploying Kapua"
 
-"$OC" new-app \
+oc new-app \
 	-n "$KAPUA_PROJECT_NAME" \
 	-f "$KAPUA_BASE_DIR/dev-tools/src/main/openshift/kapua-template.yml" \
 	-p "DOCKER_ACCOUNT=$KAPUA_DOCKER_ACCOUNT" \
 	-p "IMAGE_VERSION=$KAPUA_IMAGE_VERSION"
 
-"$OC" create -f "$SCRIPT_BASE/config/eclipse-kapua-elasticsearch.yml"
+oc create -f "$SCRIPT_BASE/config/eclipse-kapua-elasticsearch.yml"
 
-"$OC" status -n "$KAPUA_PROJECT_NAME"
+oc status -n "$KAPUA_PROJECT_NAME"
