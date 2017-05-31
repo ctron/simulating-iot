@@ -1,0 +1,12 @@
+[submodule "kapua"]
+	path = remote/kapua
+	url = https://github.com/eclipse/kapua.git
+	branch = develop
+[submodule "kura-emulator"]
+	path = remote/kura-emulator
+	url = https://github.com/ctron/kura-emulator.git
+	branch = master
+[submodule "hawkular-openshift-agent"]
+	path = remote/hawkular-openshift-agent
+	url = https://github.com/hawkular/hawkular-openshift-agent.git
+	branch = tags/1.4.1.Final

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Route
+metadata:
+  name: elasticsearch
+  labels:
+    app: elasticsearch
+spec:
+  to:
+    kind: Service
+    name: elasticsearch
+  port:
+    targetPort: http
