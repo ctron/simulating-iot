@@ -79,7 +79,7 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "alias": "/.*\\.connectionCount$/",
+              "alias": "/.*\\.messagesReceived$/",
               "yaxis": 2
             }
           ],
@@ -151,7 +151,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Messages/Requests",
+              "label": "Connections/Requests",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -159,7 +159,7 @@
             },
             {
               "format": "short",
-              "label": "Connections",
+              "label": "Messages",
               "logBase": 1,
               "max": null,
               "min": 0,
@@ -579,5 +579,5 @@
   },
   "timezone": "browser",
   "title": "Overview",
-  "version": 1
+  "version": 2
 }
