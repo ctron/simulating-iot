@@ -5,7 +5,7 @@ This tutorial assumes you are running on RHEL/CentOS 7.
 However it should work quite similar on other Linux distributions
 and even Mac OS X or Windows.
 
-You will need a x86_64 host system with at least 16 GB RAM, 40 GB disk space
+You will need a x86_64 host system with at least 32 GB RAM, 40 GB disk space
 and virtualization capabilities.
 
 All commands a local to the root of this repository.

@@ -18,14 +18,14 @@ MiniShift 1.0.1. But you can also look up the most recent release here: https://
 
     wget https://github.com/minishift/minishift/releases/download/v1.0.1/minishift-1.0.1-linux-amd64.tgz
     tar xzf minishift-1.0.1-linux-amd64.tgz
-    ./minishift start --metrics --memory 8192
+    ./minishift start --metrics --memory 16384
 
 ## Install Hawkular OpenShift Agent
 
 For gathering custom metrics from the Kapua containers we will need to install
 the Hawkular OpenShift agent: 
 
-    ./scripts/deploy_hawkular.sh
+    ./scripts/deploy-hawkular.sh
 
 ## Access OpenShift
 
