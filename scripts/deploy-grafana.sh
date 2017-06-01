@@ -30,4 +30,4 @@ oc new-app \
 
 oc status -n "$GRAFANA_PROJECT_NAME"
 
-$SCRIPT_BASE/show-information.sh --grafana
+$SCRIPT_BASE/show-information.sh --metrics

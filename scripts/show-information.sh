@@ -18,8 +18,10 @@ set -e
 # parse arguments
 
 grafana=0
+metrics=0
 kapua=0
 kura_emulator=0
+kura_simulator=0
 
 for arg in "$@" ; do
 	case "$arg" in
@@ -31,7 +33,7 @@ done
 
 # no arguments? then default to all
 
-[[ "$#" -le 0 ]] && { grafana=1 ; kapua=1 ; kura_emulator=1; }
+[[ "$#" -le 0 ]] && { grafana=1 ; metrics=1 ; kapua=1 ; kura_emulator=1 ; kura_simulator=1 ; }
 
 wants () {
 	test "$1" -ne 0
@@ -58,9 +60,9 @@ $(h1 Kura Cloud Services)
 
 __EOF__
 
-wants $grafana && cat << __EOF__
+wants $grafana && { echo ; echo "$(h1 Grafana datasources:)" ; }
 
-$(h1 Grafana datasources:)
+wants $metrics && cat << __EOF__
 
     Name:       metrics
     Type:       Hawkular
@@ -70,7 +72,7 @@ $(h1 Grafana datasources:)
     Token:      $(oc whoami -t)     $(comment \# update every 24 hours)
 __EOF__
 
-wants $grafana && openshift_project_exists "eclipse-kapua" && cat << __EOF__
+wants $kura_simulator && openshift_project_exists "eclipse-kapua" && cat << __EOF__
 
     Name:       kapua
     Type:       Elasticsearch

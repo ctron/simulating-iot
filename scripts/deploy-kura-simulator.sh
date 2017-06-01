@@ -34,3 +34,10 @@ oc -n "$KURA_SIMULATOR_PROJECT_NAME" create configmap data-simulator-config --fr
 oc -n "$KURA_SIMULATOR_PROJECT_NAME" set env --from=configmap/data-simulator-config dc/simulator
 
 oc status -n "$KURA_SIMULATOR_PROJECT_NAME"
+
+$SCRIPT_BASE/show-information.sh --kura-simulator
+
+echo
+echo You can now create the "kapua" datasource in Grafana 
+echo and deploy the "simulator-data.json" dashboard.
+echo
