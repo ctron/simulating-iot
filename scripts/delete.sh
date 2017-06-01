@@ -33,3 +33,7 @@ while oc describe "project/$project" &>/dev/null; do
 	sleep 10
 	log "Still waiting..."
 done
+
+echo $(em Note:) Sometimes the detection if the project deletion has been completed
+echo doesn\'t properly work. Give it some time and re-try to deploy command
+echo failed. 
