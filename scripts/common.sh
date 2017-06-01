@@ -31,14 +31,20 @@ die() { printf "$@" 1>&2 ; echo 1>&2 ; exit 1; }
 
 log() { echo "$@"; }
 
+openshift_login() {
+	local user="$1"
+	log "Switching user to: $user"
+	oc login -u "$user" 1>/dev/null
+}
+
 openshift_ping () {
 	log "Testing OpenShift connectivity"
-	"$OC" projects &>/dev/null || die "OpenShift seems to be unreachable. Are you logged in?"
+	oc projects &>/dev/null || die "OpenShift seems to be unreachable. Are you logged in?"
 }
 
 openshift_project_exists () {
 	local project="$1"
-	"$OC" describe "project/$project" &>/dev/null
+	oc describe "project/$project" &>/dev/null
 	return $?
 }
 
@@ -46,8 +52,10 @@ openshift_create_new_project () {
 	local project="$1"
 	openshift_project_exists "$project" && die "OpenShift project '$project' already exists. You can delete it with: \n\n\tscripts/delete.sh $project\n"
 	
-	"$OC" new-project "$project" 1>/dev/null
+	oc new-project "$project" 1>/dev/null
 }
 
 eval $(minishift oc-env)
-OC=$(which oc 2>/dev/null) || die "Unable to find 'oc' binary in the path"
+
+# test for "oc" binary
+which oc 2>/dev/null || die "Unable to find 'oc' binary in the path"
