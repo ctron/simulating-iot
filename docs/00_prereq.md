@@ -30,3 +30,10 @@ This uses a DNS resolution service which will actually parse the DNS name as IP
 address and use it as result. The IP address of your local OpenShift instance
 will be different and thus you will need to replace it. The IP address of your
 local installation can be lookup up by executing `minishift ip`.
+
+## Certificate issues
+
+Minishift uses self-signed certificates and has some issues creating proper
+host names. You will to let your browser ignore them.
+
+Also see: [Certificates](troubleshooting.md#certificate-issues). 

@@ -6,3 +6,5 @@
 1. [Deploying Eclipse Kapua](30_deploy_kapua.md)
 1. [Deploying Kura Emulator](40_deploy_kura_emulator.md)
 1. [Deploying Kura Simulator](50_deploy_kura_simulator.md)
+
+If things go wrong, see [troubleshooting.md](troubleshooting.md). 
