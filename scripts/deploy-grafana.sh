@@ -31,3 +31,10 @@ oc new-app \
 oc status -n "$GRAFANA_PROJECT_NAME"
 
 $SCRIPT_BASE/show-information.sh --metrics
+
+echo
+echo Wait for the Grafana build to complete before accessing the web UI
+echo You can check the build status with:
+echo
+echo     oc status -n "$GRAFANA_PROJECT_NAME"
+echo

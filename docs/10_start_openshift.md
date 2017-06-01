@@ -32,6 +32,9 @@ Starting up a new local OpenShift cluster is as easy as:
 
     minishift start --metrics --memory 16384
 
+After the VM has been created, give OpenShift a bit of time to deploy
+its subsystems.
+
 ## Install the Hawkular OpenShift Agent
 
 For gathering custom metrics from the Kapua containers we will need to install

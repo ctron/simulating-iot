@@ -43,7 +43,7 @@ wants () {
 
 # run
 
-wants $kura_emulator && openshift_project_exists "kura-emulator" && cat << __EOF__
+wants $kura_emulator && openshift_project_exists "$KURA_EMULATOR_PROJECT_NAME" && cat << __EOF__
 
 $(h1 Kura Cloud Services)
 
@@ -73,7 +73,7 @@ wants $metrics && cat << __EOF__
     Token:      $(oc whoami -t)     $(comment \# update every 24 hours)
 __EOF__
 
-wants $kura_simulator && openshift_project_exists "eclipse-kapua" && cat << __EOF__
+wants $kura_simulator && openshift_project_exists "$KAPUA_PROJECT_NAME" && cat << __EOF__
 
     Name:       kapua
     Type:       Elasticsearch
@@ -90,21 +90,21 @@ $(h1 Web UIs:)
 
 __EOF__
 
-wants $kapua && openshift_project_exists "eclipse-kapua" && cat << __EOF__
+wants $kapua && openshift_project_exists "$KAPUA_PROJECT_NAME" && cat << __EOF__
     $(em Kapua Console:) $(service_url "eclipse-kapua" "console")
            User: kapua-sys
        Password: kapua-password
 
 __EOF__
 
-wants $grafana && openshift_project_exists "grafana" && cat << __EOF__
+wants $grafana && openshift_project_exists "$GRAFANA_PROJECT_NAME" && cat << __EOF__
     $(em Grafana:)       $(service_url "grafana" "hawkular-grafana")
            User: admin
        Password: admin
 
 __EOF__
 
-wants $kura_emulator && openshift_project_exists "kura-emulator" && cat << __EOF__
+wants $kura_emulator && openshift_project_exists "$KURA_EMULATOR_PROJECT_NAME" && cat << __EOF__
     $(em Kura Emulator:) $(service_url "kura-emulator" "console")
            User: admin
        Password: admin
