@@ -17,9 +17,15 @@ set -e
 
 openshift_ping
 
-oc login -u system:admin
+openshift_login "system:admin"
 
-trap "oc login -u developer" EXIT
+function cleanup () {
+	openshift_login "developer"
+}
+
+trap cleanup EXIT
+
+# create Hawkular OpenShift Agent setup
 
 oc create -f remote/hawkular-openshift-agent/deploy/openshift/hawkular-openshift-agent-configmap.yaml -n openshift-infra
 oc process -f remote/hawkular-openshift-agent/deploy/openshift/hawkular-openshift-agent.yaml IMAGE_VERSION=1.4.1.Final | oc create -n openshift-infra -f -
