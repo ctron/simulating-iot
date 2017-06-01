@@ -49,8 +49,17 @@ Which should print out something like:
     metrics-deployer-pod-36q6p   0/1       Completed   0          12m
 
 If e.g. the `hawkular-metrics-xxxxx` pod is not ready after some time, it may
-be that something when wrong during startup. For me it helped to kill the pod with:
+be that something when wrong during startup (note the `0/1` for the metrics pod):
+
+    NAME                             READY     STATUS    RESTARTS   AGE
+    hawkular-cassandra-1-0c065       1/1       Running   0          9m
+    hawkular-metrics-hp5cp           0/1       Running   0          9m
+    hawkular-openshift-agent-jnvb8   1/1       Running   0          7m
+    heapster-8c0w5                   0/1       Running   0          9m
+
+It helps to restart the pod with:
 
     oc delete pod/hawkular-metrics-xxxxx
-    
+    pod "hawkular-metrics-xxxxx" deleted
+
 Which will kill and restart the pod.
