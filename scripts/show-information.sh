@@ -42,13 +42,19 @@ wants () {
 
 wants $kura_emulator && openshift_project_exists "kura-emulator" && cat << __EOF__
 
-$(h1 Kura Cloud Service:)
+$(h1 Kura Cloud Services)
 
-   Account Name: kapua-sys
-   User:         kapua-broker
-   Password:     kapua-password
-   Broker URL:   mqtt://broker-eclipse-kapua.$(minishift ip).nip.io:31883
-   Client ID:    emulator-1
+  $(em Data Service)
+
+    $(em connect.auto-on-startup):    true
+
+  $(em MqttDataTransport)
+
+    $(em broker-url:)                 mqtt://broker-eclipse-kapua.$(minishift ip).nip.io:31883
+    $(em topic.context.account-name:) kapua-sys
+    $(em username:)                   kapua-broker
+    $(em password:)                   kapua-password
+    $(em client:)                     emulator-1
 
 __EOF__
 

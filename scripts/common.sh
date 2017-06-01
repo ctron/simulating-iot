@@ -31,23 +31,10 @@ die() { printf "$@" 1>&2 ; echo 1>&2 ; exit 1; }
 
 log() { echo "$@"; }
 
-em() {
-	tput bold
-	echo -n "$@"
-	tput sgr0
-}
-
-comment() {
-	tput dim
-	echo -n "$@"
-	tput sgr0
-}
-
-h1() {
-	tput bold ; tput smul
-	echo -n "$@"
-	tput sgr0
-}
+em() { tput bold ; echo -n "$@" ; tput sgr0 ; }
+ul() { tput smul ;echo -n "$@" ; tput rmul ; }
+comment() { tput dim ; echo -n "$@" ; tput sgr0 ; }
+h1() { tput bold ; tput smul ; echo -n "$@" ; tput sgr0 ; }
 
 service_url () {
 	local ns="$1"

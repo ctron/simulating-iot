@@ -26,14 +26,3 @@ oc process \
 oc status -n "$KURA_EMULATOR_PROJECT_NAME"
 
 $SCRIPT_BASE/show-information.sh --kura-emulator
-
-cat << __EOF__
-
-Configure Kura to use:
-   Account Name: kapua-sys
-   User:         kapua-broker
-   Password:     kapua-password
-   Broker URL:   mqtt://broker-eclipse-kapua.$(minishift ip).nip.io:31883
-   Client ID:    emulator-1
-
-__EOF__

@@ -1,4 +1,4 @@
-# Deploy Kura Simulator
+# Deploy the Kura Simulator
 
 From the root of the repository run:
 
@@ -10,16 +10,14 @@ creates a set of sine curves as data.
 
 ## Checking for data
 
-* Log in to Kapua
-* Switch to "data"
-* Query for data of `app1`
+Check if data is received by Kapua:
 
+* Log in to Kapua
+* Switch to the "Data" view
+* Query for data of `app1`
 
 ## Visualizing data with Grafana
 
-Add a new datasource to grafana
-
-* Name: `kapua`
-* Type: Elasticsearch
-* URL: http://elasticsearch-eclipse-kapua.192.168.12.34.nip.io
-* Index Name: 1-GGGG-WW
+* Create the datasource `kapua` with the parameters shown by `./scripts/show-information.sh --grafana`
+* Import the dashboard from `config/grafana/simulator-data.json`
+    * Select the datasource `kapua`
