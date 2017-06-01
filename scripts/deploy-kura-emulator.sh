@@ -25,6 +25,8 @@ oc process \
 
 oc status -n "$KURA_EMULATOR_PROJECT_NAME"
 
+$SCRIPT_BASE/show-information.sh --kura-emulator
+
 cat << __EOF__
 
 Configure Kura to use:

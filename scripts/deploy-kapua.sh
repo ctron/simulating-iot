@@ -32,3 +32,5 @@ oc new-app \
 oc create -f "$SCRIPT_BASE/../config/eclipse-kapua-elasticsearch.yml"
 
 oc status -n "$KAPUA_PROJECT_NAME"
+
+$SCRIPT_BASE/show-information.sh --kapua

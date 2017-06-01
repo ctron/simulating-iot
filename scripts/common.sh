@@ -31,6 +31,30 @@ die() { printf "$@" 1>&2 ; echo 1>&2 ; exit 1; }
 
 log() { echo "$@"; }
 
+em() {
+	tput bold
+	echo -n "$@"
+	tput sgr0
+}
+
+comment() {
+	tput dim
+	echo -n "$@"
+	tput sgr0
+}
+
+h1() {
+	tput bold ; tput smul
+	echo -n "$@"
+	tput sgr0
+}
+
+service_url () {
+	local ns="$1"
+	local service="$2"
+	minishift openshift service "$2" -n "$1" --url
+}
+
 openshift_login() {
 	local user="$1"
 	log "Switching user to: $user"
@@ -58,4 +82,4 @@ openshift_create_new_project () {
 eval $(minishift oc-env)
 
 # test for "oc" binary
-which oc 2>/dev/null || die "Unable to find 'oc' binary in the path"
+which oc &>/dev/null || die "Unable to find 'oc' binary in the path"
