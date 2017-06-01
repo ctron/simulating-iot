@@ -71,4 +71,4 @@ eval $(minishift oc-env)
 # test for "oc" binary
 which oc &>/dev/null || die "Unable to find 'oc' binary in the path"
 
-test -f "$SCRIPT_BASE/../remote/kura-emulator/README.md" || die "Unable to find remote repository content. Are the git submodules initialized?"
+test -f "$SCRIPT_BASE/../remote/kura-emulator/README.md" || die "Unable to find remote repository content. Are the git submodules initialized? You can do this by executing:\n\n\tgit submodule update --init"
