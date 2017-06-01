@@ -29,6 +29,6 @@ oc new-app \
 	-p "DOCKER_ACCOUNT=$KAPUA_DOCKER_ACCOUNT" \
 	-p "IMAGE_VERSION=$KAPUA_IMAGE_VERSION"
 
-oc create -f "$SCRIPT_BASE/config/eclipse-kapua-elasticsearch.yml"
+oc create -f "$SCRIPT_BASE/../config/eclipse-kapua-elasticsearch.yml"
 
 oc status -n "$KAPUA_PROJECT_NAME"
