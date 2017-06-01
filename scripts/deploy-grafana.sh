@@ -30,21 +30,4 @@ oc new-app \
 
 oc status -n "$GRAFANA_PROJECT_NAME"
 
-echo
-echo Now configure your Grafana datasources with:
-echo
-echo "    Type:       Hawkular"
-echo "    Name:       metrics"
-echo "    URL:        https://metrics-openshift-infra.$(minishift ip).nip.io/hawkular/metrics"
-echo "    Access:     proxy"
-echo "    Tenant:     ${KAPUA_PROJECT_NAME}"
-echo "    Token:      $(oc whoami -t)"
-echo
-echo "    Type:       Elasticsearch"
-echo "    Name:       kapua
-echo "    URL:        https://elasticsearc-eclipse-kapua.$(minishift ip).nip.io"
-echo "    Access:     proxy"
-echo "    Index Name: [1]-YYYY-WW    Pattern: Weekly"
-echo "    Time field: timestamp"
-echo "    Version:    5.x"
-echo
+$SCRIPT_BASE/grafana-datasources.sh
