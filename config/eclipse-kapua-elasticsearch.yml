@@ -1,3 +1,9 @@
+
+#
+# Adding this file to the "eclipse-kapua" project will open up the
+# Elasticsearch REST API.
+#
+
 apiVersion: v1
 kind: Route
 metadata:
