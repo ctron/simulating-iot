@@ -26,8 +26,10 @@ kura_simulator=0
 for arg in "$@" ; do
 	case "$arg" in
 		--grafana) grafana=1 ;;
+		--metrics) metrics=1 ;;
 		--kapua) kapua=1 ;;
 		--kura-emulator) kura_emulator=1 ;;
+		--kura-simulator) kura_simulator=1 ;;
 	esac
 done
 
