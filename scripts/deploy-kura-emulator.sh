@@ -21,7 +21,7 @@ openshift_create_new_project "$KURA_EMULATOR_PROJECT_NAME"
 
 oc process \
  -n "$KURA_EMULATOR_PROJECT_NAME" \
- -f "$KURA_EMULATOR_BASE_DIR/openshift/kura-template.yml" | oc create -n "$KURA_EMULATOR_PROJECT_NAME" -f -
+-f "$KURA_EMULATOR_BASE_DIR/extensions/artemis/openshift-template.yml" | oc create -n "$KURA_EMULATOR_PROJECT_NAME" -f -
 
 oc status -n "$KURA_EMULATOR_PROJECT_NAME"
 
