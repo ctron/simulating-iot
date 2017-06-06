@@ -187,6 +187,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
+          "hideTimeOverride": true,
           "id": 6,
           "interval": null,
           "links": [],
@@ -239,6 +240,7 @@
             }
           ],
           "thresholds": "70,80",
+          "timeFrom": "1m",
           "title": "Connections",
           "type": "singlestat",
           "valueFontSize": "80%",
@@ -579,5 +581,5 @@
   },
   "timezone": "browser",
   "title": "Overview",
-  "version": 2
+  "version": 1
 }
