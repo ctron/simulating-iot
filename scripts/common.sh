@@ -61,7 +61,7 @@ openshift_project_exists () {
 
 openshift_create_new_project () {
 	local project="$1"
-	openshift_project_exists "$project" && die "OpenShift project '$project' already exists. You can delete it with: \n\n\tscripts/delete.sh $project\n"
+	openshift_project_exists "$project" && die "OpenShift project '$project' already exists. You can delete it with: \n\n\tscripts/delete.sh $project\n\nOur you may need to wait a bit longer for the delete to complete\n"
 	
 	oc new-project "$project" 1>/dev/null
 }

@@ -111,5 +111,4 @@ wants $kura_emulator && openshift_project_exists "$KURA_EMULATOR_PROJECT_NAME" &
 
 __EOF__
 
-echo
 
