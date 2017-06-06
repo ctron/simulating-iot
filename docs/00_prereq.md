@@ -13,7 +13,7 @@ or commands might be a little bit different. However those setups are
 not tested.
 
 You will need a x86_64 host system with at least 32 GB RAM, 40 GB disk space
-and virtualization capabilities.
+and 4 CPU cores with virtualization capabilities.
 
 ## Commands
 

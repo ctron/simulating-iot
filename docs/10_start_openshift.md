@@ -30,7 +30,7 @@ There are different ways to achieve this. The most simplest one would be:
 
 Starting up a new local OpenShift cluster is as easy as:
 
-    minishift start --metrics --memory 16384
+    minishift start --metrics --memory 16384 --cpus 4
 
 After the VM has been created, give OpenShift a bit of time to deploy
 its subsystems.
