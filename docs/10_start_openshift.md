@@ -47,3 +47,17 @@ the Hawkular OpenShift agent:
 After the MiniShift instance is running, you can log on to the OpenShift console:
 
     ./minishift console
+
+## Starting, stopping and deleting the local instance
+
+You can start and stop the local OpenShift instance using:
+
+    minishift stop
+    minishift start
+
+Which will shutdown and startup up the OpenShift instance in
+the same configuration, including all containers.
+
+It is also possible to completely destroy the instance by:
+
+    minishift delete

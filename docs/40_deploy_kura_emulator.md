@@ -8,7 +8,7 @@ This actually makes a full build of the Kura emulator image and may take
 long time (~30 minutes). You can check the progress from the OpenShift
 web console.
 
-## Configure connection to Kapua
+## Configure a connection to Kapua
 
 Navigate to the Kura Emulator web console.
 
