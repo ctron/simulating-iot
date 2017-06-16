@@ -20,8 +20,12 @@ PROJECTS="$KAPUA_PROJECT_NAME $KURA_EMULATOR_PROJECT_NAME $KURA_SIMULATOR_PROJEC
 
 openshift_ping
 
+echo
+echo "Deleting…"
+
 for i in $PROJECTS; do
-	oc delete "project/$i"
+	echo "$i"
+	openshift_project_exists "$i" && oc delete "project/$i"
 done
 
 echo
