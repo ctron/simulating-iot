@@ -15,25 +15,17 @@ set -e
 # source commons
 . "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/common.sh"
 
-project="$1"
 
-test -n "$project" || die "Missing project name: ./delete.sh <project>"
+PROJECTS="$KAPUA_PROJECT_NAME $KURA_EMULATOR_PROJECT_NAME $KURA_SIMULATOR_PROJECT_NAME $GRAFANA_PROJECT_NAME"
 
 openshift_ping
 
-log "Deleting project '$project'"
-
-oc delete "project/$project"
-
-log "Waiting to project deletion"
-
-while oc describe "project/$project" &>/dev/null; do
-	sleep 10
-	log "Still waiting..."
+for i in $PROJECTS; do
+	oc delete "project/$i"
 done
 
 echo
-echo $(em Note:) Sometimes the detection if the project deletion has been completed
-echo doesn\'t properly work. Give it some time and re-try to deploy command
-echo failed.
+echo $(em Note:) Deleting all projects may take a while and although
+echo projects may not be visible, they still may exists for a bit
+echo until they are completely deleted.
 echo

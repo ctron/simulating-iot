@@ -19,6 +19,7 @@ openshift_ping
 
 openshift_create_new_project "$GRAFANA_PROJECT_NAME"
 
+# Use a specific version, use tagged version when there is a release with ES 5.x support
 #oc new-app \
 # -n "$GRAFANA_PROJECT_NAME" \
 # -f https://raw.githubusercontent.com/hawkular/hawkular-grafana-datasource/v1.0.8/docker/openshift/openshift-template-ephemeral.yaml
