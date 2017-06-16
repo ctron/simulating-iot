@@ -96,7 +96,7 @@
                   "type": "avg"
                 }
               ],
-              "query": "client_id:$device and channel:app1/t1/data",
+              "query": "channel:\"app1/t1/data\"",
               "rate": false,
               "refId": "A",
               "seriesAggFn": "none",
@@ -193,7 +193,7 @@
                   "type": "avg"
                 }
               ],
-              "query": "client_id:$device and channel:app2/t1/data",
+              "query": "channel:\"app1/t1/data\"",
               "refId": "B",
               "timeField": "timestamp"
             }
@@ -312,7 +312,7 @@
                   "type": "extended_stats"
                 }
               ],
-              "query": "client_id:$device and channel:app1/t1/data",
+              "query": "channel:\"app1/t1/data\"",
               "rate": false,
               "refId": "A",
               "seriesAggFn": "none",
@@ -426,7 +426,7 @@
                   "type": "extended_stats"
                 }
               ],
-              "query": "client_id:$device and channel:app2/t1/data",
+              "query": "channel:\"app1/t1/data\"",
               "refId": "B",
               "timeField": "timestamp"
             }
@@ -512,7 +512,7 @@
                   "field": "timestamp",
                   "id": "2",
                   "settings": {
-                    "interval": "auto",
+                    "interval": "2s",
                     "min_doc_count": 0,
                     "trimEdges": 0
                   },
@@ -589,28 +589,7 @@
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": [
-      {
-        "allValue": null,
-        "current": {},
-        "datasource": "${DS_KAPUA}",
-        "hide": 0,
-        "includeAll": true,
-        "label": null,
-        "multi": true,
-        "name": "device",
-        "options": [],
-        "query": "{\"find\": \"terms\", \"field\": \"client_id\"}",
-        "refresh": 1,
-        "regex": "",
-        "sort": 1,
-        "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      }
-    ]
+    "list": []
   },
   "time": {
     "from": "now-30m",
@@ -643,5 +622,5 @@
   },
   "timezone": "browser",
   "title": "Simulator Data",
-  "version": 4
+  "version": 1
 }
